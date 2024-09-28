@@ -1,0 +1,110 @@
+/*styles.css*/
+
+ /*********************_Total_*************************************/
+ .root{
+    background-color: rgb(34, 34, 34);
+ }
+
+ /***********************_navigation_***************************************/
+
+.btn-toggle{
+    position: fixed;
+    right: 15px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    /* line-height: 50px; */
+    z-index: 6;
+}
+ 
+.btn-toggle:focus, 
+.menu-toggle:hover {
+    color: #fff;
+}
+.btn-toggle:hover {
+    background: #343a40;
+} 
+
+.collapse-menu{
+    height: 100vh;
+    top: 0px;
+    background-color: rgb(139, 64, 64);
+    border-radius: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 5;
+}
+
+.collapse.show .collapse-menu {
+    transform: translateX(0); /* Slide in */
+}
+  
+ /*********************_Header_*************************************/
+ .container-header {
+    position: relative;
+    top: -15px;
+    background-image: url('../imgs/northfolk-b_Qt9f2egBM-unsplash.jpg');
+    background-size: cover;
+    background-position: center; 
+    min-height: 500px;
+}
+
+.container-blurred{
+    background-color: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px); 
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+ /*********************_AboutSection_*************************************/
+
+ .about-container {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    padding: 15;
+    top: -15px;
+    overflow: hidden;
+    background-color:rgb(34, 34, 34);
+    color: white;
+ }
+
+ .about-container-heading h2, .about-container-heading .h2{
+    font-size: 2rem;
+ }
+ .about-container-heading h3, .about-container-heading .h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+ }
+
+
+ /*********************_InfoSection_*************************************/
+ .info-container {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    padding: 15;
+    top: -15px;
+    overflow: hidden;
+    background-color:rgb(34, 34, 34);
+    background-color:blue;
+    color: white;
+ }
+
+ .info-container-heading h2, .info-container-heading .h2{
+    font-size: 2rem;
+ }
+ .info-container-heading h3, .info-container-heading .h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+ }
+
+
+/*********************_list-Style_*************************************/
+
+.list-style{
+    
+}
