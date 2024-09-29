@@ -15,12 +15,11 @@
     <!----------------------------------_Navigation_-------------------------------------------------------------->
     <p>
          <button id="scrollToTopBtn" class="btn btn-primary" style="position: fixed; top: 20px; right: 20px; z-index: 2;">
-            <i class="fas fa-house"></i>
+            <i class="bi-chevron-up"></i>
         </button>
         
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            // Scroll to top function
             $('#scrollToTopBtn').click(function() {
                 $('html, body').animate({ scrollTop: 0 }, 200);
             });
@@ -28,11 +27,6 @@
     </p>
 
     <div>
-        <div class="collapse collapse-horizontal" id="collapseWidth">
-            <div class="card collapse-menu position-fixed end-0" style="width: 250px;">
-                menu
-            </div>
-        </div>
     </div>
 <!------------------------------------------_Header_------------------------------------------------------>
     <header class="container-fluid container-header bg-primary d-flex justify-content-center align-items-center">
@@ -45,7 +39,6 @@
                 </h1>
             </div>
             <br>
-            <button type="button" class="btn btn-danger" href="#about">Learn More</button>
         </div>
     </header>
 <!------------------------------------------_about-sec_------------------------------------------------------>
@@ -73,14 +66,71 @@
 
      </div>
   </section>
- <!------------------------------------------_data-sect_------------------------------------------------------>
- <section class="data-sect d-flex flex-column justify-content-center align-items-center">
+<!------------------------------------------_data-sect_------------------------------------------------------>
+<section class="data-sect d-flex flex-column justify-content-center align-items-center">
     <h2>Upload Your Schedule PDF</h2>
+
+    <!-- File Upload Form -->
     <form class="file-upload" enctype="multipart/form-data">
         <input type="file" id="pdfUpload" name="schedule" accept=".pdf">
     </form>
-</section>
 
+    <!-- New Form for Dropdowns and Text Input -->
+    <form class="schedule-options mt-4">
+        <!-- Text Input for Sleep Schedule -->
+        <div class="form-group mt-3">
+            <label for="sleepSchedule">Input your ideal sleep schedule:</label>
+            <input type="text" class="form-control" id="sleepSchedule" name="sleepSchedule" placeholder="e.g., 10:00 PM - 6:00 AM">
+        </div>
+        <div class="form-group mt-3">
+            <label for="workSchedule">Input your Work Schedule:</label>
+            <input type="text" class="form-control" id="workSchedule" name="workSchedule" placeholder="Optional">
+        </div>
+
+        <div class="optional-cont">
+            <br/>
+            <span>Below are optional selections</span>
+            <br/>
+            <br/>
+        </div>
+
+        <!-- Dropdown for Exercise -->
+        <div class="form-group mt-3">
+            <label for="exercise">Exercise:</label>
+            <select class="form-select" id="exercise" name="exercise">
+                <option value="">Select</option>
+                <option value="1-hour">1 hour</option>
+                <option value="2-hour">2 hour</option>
+                <option value="3-hour">3 hour</option>
+            </select>
+        </div>
+
+        <!-- Dropdown for Study Time -->
+        <div class="form-group mt-3">
+            <label for="studyTime">Study Time:</label>
+            <select class="form-select" id="studyTime" name="studyTime">
+                <option value="">Select</option>
+                <option value="1-hour">1 hour</option>
+                <option value="2-hour">2 hour</option>
+                <option value="3-hour">3 hour</option>
+            </select>
+        </div>
+
+        <!-- Dropdown for Miscellaneous -->
+        <div class="form-group mt-3">
+            <label for="miscellaneous">Miscellaneous:</label>
+            <select class="form-select" id="miscellaneous" name="miscellaneous">
+                <option value="">Select</option>
+                <option value="1-hour">1 hour</option>
+                <option value="2-hour">2 hour</option>
+                <option value="3-hour">3 hour</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+</section>
 
 
 

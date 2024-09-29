@@ -143,3 +143,14 @@
 .file-upload input[type="file"]::-webkit-file-upload-button:hover {
     background-color: #055c71;
 }
+
+
+/*********************_Optional_*************************************/
+.optional-cont {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 15;
+    overflow: hidden;
+    color: white;
+ }
