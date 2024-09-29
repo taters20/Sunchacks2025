@@ -9,12 +9,17 @@ document.querySelector('.schedule-options').addEventListener('submit', function(
     formData.append('studyTime', document.getElementById('studyTime').value);
     formData.append('miscellaneous', document.getElementById('miscellaneous').value);
 
-    fetch('http://127.0.0.1:5000', { 
+    fetch('http://127.0.0.1:5000/schedule', { 
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'cors',
+  headers: {
+    'Access-Control-Allow-Origin':'*'
+  }
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         displaySchedule(data.generated_schedule);  
     })
     .catch(error => console.error('Error:', error));

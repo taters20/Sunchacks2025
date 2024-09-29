@@ -177,22 +177,13 @@
     margin-left: 10px;
 }
 
-/* textarea#scheduleTextBox {
-    width: 100%;
-    height: auto;
-    background-color: #f8f9fa;
-    color: black;
-    padding: 10px;
-} */
-
  /*********************_footer_*************************************/
 
  .footer-container {
     position: relative;
     width: 100%;
-    height: auto;
-    padding: 15;
+    height: 50vh;
+    top: -30vh;
     overflow: hidden;
     color: white;
  }
-
