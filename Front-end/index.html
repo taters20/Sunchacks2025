@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/@fullcalendar/core@5.11.3/main.min.css' rel='stylesheet' />
+    <script src="formData.js" defer></script>
 
 </head>
 <!--------------------------------------_total viewport_---------------------------------------------------------->
@@ -45,10 +47,11 @@
  <section class="container about-container d-flex text-center justify-content-center align-items-center" id="about">
     <div class="">
         <h2> Meet your new daily planner and Routine maker </h2>
+        <h3> Made for students by students</h3>
         <br/>
         <p>
             This website allows you to be able to upload your school schedule, add conditions like, work, 
-            study, sleep, and build a schedule off of that information
+            study, sleep, and build a schedule off of that information.
         </p> 
     </div>
  </section>
@@ -60,8 +63,9 @@
          <br/>
          <ul class="list-style">
             <li><i class="bi bi-1-circle" style="margin-right: 5px;"></i>Upload your schedule PDF</li>
-            <li><i class="bi bi-2-circle" style="margin-right: 5px;"></i>Click any necessary conditions</li>
-            <li> <i class="bi bi-3-circle" style="margin-right: 5px;"></i> input your ideal sleep schedule</li>
+            <li><i class="bi bi-2-circle" style="margin-right: 5px;"></i>input your ideal sleep schedule</li>
+            <li> <i class="bi bi-3-circle" style="margin-right: 5px;"></i>Click any necessary conditions</li>
+            <li> <i class="bi bi-4-circle" style="margin-right: 5px;"></i>SUBMIT!</li>
         </ul> 
 
      </div>
@@ -75,9 +79,7 @@
         <input type="file" id="pdfUpload" name="schedule" accept=".pdf">
     </form>
 
-    <!-- New Form for Dropdowns and Text Input -->
     <form class="schedule-options mt-4">
-        <!-- Text Input for Sleep Schedule -->
         <div class="form-group mt-3">
             <label for="sleepSchedule">Input your ideal sleep schedule:</label>
             <input type="text" class="form-control" id="sleepSchedule" name="sleepSchedule" placeholder="e.g., 10:00 PM - 6:00 AM">
@@ -89,12 +91,10 @@
 
         <div class="optional-cont">
             <br/>
-            <span>Below are optional selections</span>
             <br/>
-            <br/>
+            <h4>Below are optional selections:</h4>
         </div>
 
-        <!-- Dropdown for Exercise -->
         <div class="form-group mt-3">
             <label for="exercise">Exercise:</label>
             <select class="form-select" id="exercise" name="exercise">
@@ -105,7 +105,6 @@
             </select>
         </div>
 
-        <!-- Dropdown for Study Time -->
         <div class="form-group mt-3">
             <label for="studyTime">Study Time:</label>
             <select class="form-select" id="studyTime" name="studyTime">
@@ -116,7 +115,6 @@
             </select>
         </div>
 
-        <!-- Dropdown for Miscellaneous -->
         <div class="form-group mt-3">
             <label for="miscellaneous">Miscellaneous:</label>
             <select class="form-select" id="miscellaneous" name="miscellaneous">
@@ -127,20 +125,25 @@
             </select>
         </div>
 
-        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary mt-4">Submit</button>
     </form>
 </section>
 
-<!------------------------------------------_generated-sect_------------------------------------------------------>
-
-<section id="generatedSchedule" class="generated-schedule mt-4"></section>
-    <!-- The generated schedule will be displayed here -->
+<!------------------------------------------_generated-sect_---------------------------------------------------->
+<section class="generated-sect d-flex">
+    <div id="generated-schedule" class="container mt-4">
+        <!-- This is where the schedule will be displayed -->
+    </div>
 </section>
 
+<!------------------------------------------_footer_------------------------------------------------------>
+<footer class="footer-container d-flex flex-row justify-content-center align-items-center">
 
+</footer>
 <!-------------------------------------------_end_----------------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="formData.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script src='https://unpkg.com/@fullcalendar/core@5.11.3/main.min.js'></script>
+<script src='https://unpkg.com/@fullcalendar/daygrid@5.11.3/main.min.js'></script>
 </body>
 </html>

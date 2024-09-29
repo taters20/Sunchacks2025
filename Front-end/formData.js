@@ -1,49 +1,38 @@
-// formData.js
-
-
 document.querySelector('.schedule-options').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent default form submission
-    
-    // Capture input values
-    const pdfFile = document.getElementById('pdfUpload').files[0];
-    const sleepSchedule = document.getElementById('sleepSchedule').value;
-    const workSchedule = document.getElementById('workSchedule').value;
-    const exercise = document.getElementById('exercise').value;
-    const studyTime = document.getElementById('studyTime').value;
-    const miscellaneous = document.getElementById('miscellaneous').value;
-    
-    // Log values to the console for debugging
-    console.log("User Input:");
-    console.log("PDF File:", pdfFile);
-    console.log("Sleep Schedule:", sleepSchedule);
-    console.log("Work Schedule:", workSchedule);
-    console.log("Exercise:", exercise);
-    console.log("Study Time:", studyTime);
-    console.log("Miscellaneous:", miscellaneous);
+    event.preventDefault();  
 
-    // FormData for submission
     const formData = new FormData();
-    formData.append('schedule', pdfFile);
-    formData.append('sleepSchedule', sleepSchedule);
-    formData.append('workSchedule', workSchedule);
-    formData.append('exercise', exercise);
-    formData.append('studyTime', studyTime);
-    formData.append('miscellaneous', miscellaneous);
+    formData.append('schedule', document.getElementById('pdfUpload').files[0]);
+    formData.append('sleepSchedule', document.getElementById('sleepSchedule').value);
+    formData.append('workSchedule', document.getElementById('workSchedule').value);
+    formData.append('exercise', document.getElementById('exercise').value);
+    formData.append('studyTime', document.getElementById('studyTime').value);
+    formData.append('miscellaneous', document.getElementById('miscellaneous').value);
 
-    // Fetch request to the backend
-    fetch('http://127.0.0.1:5000/schedule', {
+    fetch('http://127.0.0.1:5000', { 
         method: 'POST',
         body: formData
-    }).then(response => response.json())
-      .then(data => {
-          console.log(data.generated_schedule);  // Log generated schedule
-          displaySchedule(data.generated_schedule); // Display the schedule on the page
-      })
-      .catch(error => console.error('Error:', error));
+    })
+    .then(response => response.json())
+    .then(data => {
+        displaySchedule(data.generated_schedule);  
+    })
+    .catch(error => console.error('Error:', error));
 });
 
-// Function to display the generated schedule
 function displaySchedule(schedule) {
-    const generatedScheduleDiv = document.getElementById('generatedSchedule');
-    generatedScheduleDiv.innerHTML = `<h3>Generated Schedule:</h3><p>${schedule}</p>`;
+    const generatedSection = document.getElementById('generated-schedule');
+    generatedSection.innerHTML = '';  
+    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const scheduleLines = schedule.split("\n");
+    
+    daysOfWeek.forEach(day => {
+        const dayHeader = document.createElement('h3');
+        dayHeader.innerText = day;
+        generatedSection.appendChild(dayHeader);
+
+        const dayContent = document.createElement('p');
+        dayContent.innerText = scheduleLines.filter(line => line.includes(day)).join("\n");
+        generatedSection.appendChild(dayContent);
+    });
 }

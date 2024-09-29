@@ -154,3 +154,45 @@
     overflow: hidden;
     color: white;
  }
+
+ /*********************_generated_*************************************/
+ .generated-sect{
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    padding: 15;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+ }
+ .generated-sect h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.generated-sect p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+/* textarea#scheduleTextBox {
+    width: 100%;
+    height: auto;
+    background-color: #f8f9fa;
+    color: black;
+    padding: 10px;
+} */
+
+ /*********************_footer_*************************************/
+
+ .footer-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15;
+    overflow: hidden;
+    color: white;
+ }
+
