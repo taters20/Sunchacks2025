@@ -10,7 +10,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
+CORS(app)
 
 load_dotenv()
 
@@ -23,6 +23,7 @@ def extract_schedule_pdf(pdf_path):
     for page in doc:
         text += page.get_text()
 
+    # use regex to scrape the information
     pattern = r'(\d{5})\s+([\w\n]+)+([\w\s]+)\s+(\d+.\d+)\s+([\w\s]+(?:,\sStaff)?)\n+([\w\s]+)\s+([\d:]+\s(?:AM|PM)?\s-\s[\d:]+\s(?:AM|PM)?)\s+([\d/]+\s-\s[\d/]+)\s+([\w\n\w\n]+)'
     matches = re.findall(pattern, text)
 
@@ -43,7 +44,7 @@ def extract_schedule_pdf(pdf_path):
     
     return schedule
     
-@app.route('/', methods=['POST'])
+@app.route('/schedule', methods=['POST'])
 def handle_schedule():
     ''' these are test cases
     print("Received request with form data:", request.form)
@@ -90,7 +91,7 @@ def handle_schedule():
     {formatted_schedule}
 
     Provide only the schedule, no additional information is needed.
-    Fit the study time, exercise time, and miscellaneous whenever appropriate so it doesn't overlap
+    Fit the study time, exercise time, and other times whenever appropriate so it doesn't overlap
     """
 
  
