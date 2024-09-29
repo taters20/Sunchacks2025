@@ -141,25 +141,6 @@
 
 <!-------------------------------------------_end_----------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script>
-        const toggleButton = document.getElementById('toggleButton');
-        const toggleIcon = document.getElementById('toggleIcon');
-        const collapseElement = document.getElementById('collapseWidth');
-
-        collapseElement.addEventListener('shown.bs.collapse', () => {
-            // Change icon to 'X' when menu is opened
-            toggleIcon.innerHTML = `
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-            `;
-        });
-
-        collapseElement.addEventListener('hidden.bs.collapse', () => {
-            // Change icon back to menu bars when menu is closed
-            toggleIcon.innerHTML = `
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            `;
-        });
-    </script>
     <script src="formData.js"></script>
 </body>
 </html>
