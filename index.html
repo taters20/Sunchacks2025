@@ -14,11 +14,17 @@
 <body class="root">
     <!----------------------------------_Navigation_-------------------------------------------------------------->
     <p>
-        <button class="btn btn-primary btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidth" aria-expanded="false" aria-controls="collapseWidth" id="toggleButton">
-            <svg id="toggleIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-            </svg>
+         <button id="scrollToTopBtn" class="btn btn-primary" style="position: fixed; top: 20px; right: 20px; z-index: 2;">
+            <i class="fas fa-house"></i>
         </button>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            // Scroll to top function
+            $('#scrollToTopBtn').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 200);
+            });
+        </script>
     </p>
 
     <div>
